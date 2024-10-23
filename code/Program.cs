@@ -9,7 +9,7 @@ void PrintArray(string[] str){
     for (int i = 0; i != str.Length; i++){
         Console.Write($" '{str[i]}' ");
     }
-    Console.WriteLine("]");
+    Console.Write("] ");
 }
 
 string[] CheckAndSetString(string[] stringArray){
@@ -27,11 +27,6 @@ string[] CheckAndSetString(string[] stringArray){
             count++;
             ModArray[count] += stringArray[i];
         }
-            // if (stringArray[i].Length <= 3){
-            // }
-            // else{
-            //     break;
-            // }
     }
     return ModArray;
 }
@@ -42,6 +37,6 @@ Console.WriteLine("Input string: ");
 string str = Console.ReadLine()!;
 string[] strArray = str.Split();
 PrintArray(strArray);
-Console.WriteLine("-----------------------");
+Console.Write(" -> ");
 PrintArray(CheckAndSetString(strArray));
 
