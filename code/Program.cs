@@ -3,11 +3,16 @@
 // Первоначальный массив можно ввести с клавиатуры, либо задать на старте выполнения алгоритма.
 //  При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
 
-Console.WriteLine("Hello, World!");
 
 string str = Console.ReadLine()!;
 string[] strArray = str.Split();
-string[] CheckString(string[] stringArray){
+void PrintArray(string[] str){
+    for (int i = 0; i != str.Length; i++){
+        Console.WriteLine($"{str[i] }");
+    }
+}
+
+string[] CheckAndSetString(string[] stringArray){
     string[] ModArray = new string[stringArray.Length];
     for (int i = 0; i != stringArray.Length; i++){
         if (stringArray[i].Length <= 3){
@@ -15,7 +20,6 @@ string[] CheckString(string[] stringArray){
         }
         else{
             break;
-        }
             // if (stringArray[i].Length <= 3){
                 
             // }
@@ -26,3 +30,9 @@ string[] CheckString(string[] stringArray){
     }
     return ModArray;
 }
+
+PrintArray(strArray);
+
+Console.WriteLine("-----------------------");
+PrintArray(CheckAndSetString(strArray));
+
