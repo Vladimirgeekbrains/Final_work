@@ -4,35 +4,44 @@
 //  При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
 
 
-string str = Console.ReadLine()!;
-string[] strArray = str.Split();
 void PrintArray(string[] str){
+    Console.Write("[ ");
     for (int i = 0; i != str.Length; i++){
-        Console.WriteLine($"{str[i] }");
+        Console.Write($" '{str[i]}' ");
     }
+    Console.WriteLine("]");
 }
 
 string[] CheckAndSetString(string[] stringArray){
-    string[] ModArray = new string[stringArray.Length];
+    int count = 0;
+    for (int k = 0; k != stringArray.Length; k++){
+        if (stringArray[k].Length <= 3){
+            count++;
+        }
+    }
+    string[] ModArray = new string[count];
+
+    count = -1;
     for (int i = 0; i != stringArray.Length; i++){
         if (stringArray[i].Length <= 3){
-            ModArray[i] += stringArray[i];
+            count++;
+            ModArray[count] += stringArray[i];
         }
-        else{
-            break;
             // if (stringArray[i].Length <= 3){
-                
             // }
             // else{
             //     break;
             // }
-        }
     }
     return ModArray;
 }
 
-PrintArray(strArray);
 
+Console.WriteLine("Input string: ");
+
+string str = Console.ReadLine()!;
+string[] strArray = str.Split();
+PrintArray(strArray);
 Console.WriteLine("-----------------------");
 PrintArray(CheckAndSetString(strArray));
 
