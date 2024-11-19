@@ -20,8 +20,8 @@ string[] CheckAndSetString(string[] stringArray){
         }
     }
     string[] ModArray = new string[count];
-
     count = -1;
+    
     for (int i = 0; i != stringArray.Length; i++){
         if (stringArray[i].Length <= 3){
             count++;
